@@ -28,7 +28,7 @@ function LeaveServerModal() {
     try {
       setIsLoading(true);
 
-      await axios.patch(`api/servers/${server?.id}/leave`);
+      await axios.patch(`/api/servers/${server?.id}/leave`);
 
       onClose();
       router.refresh();

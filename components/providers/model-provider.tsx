@@ -8,6 +8,7 @@ import MembersModel from "../models/manage-members";
 import LeaveServerModal from "../models/leave-server";
 import DeleteServerModal from "../models/delete-server-mode";
 import DeleteChannelModal from "../models/delete-channel-model";
+import EditChannelModel from "../models/edit-channel-model";
 export const ModelProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -25,6 +26,7 @@ export const ModelProvider = () => {
       <LeaveServerModal />
       <DeleteServerModal />
       <DeleteChannelModal />
+      <EditChannelModel />
     </>
   );
 };

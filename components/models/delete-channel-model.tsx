@@ -31,7 +31,7 @@ function DeleteChannelModal() {
       setIsLoading(true);
 
       const url = queryString.stringifyUrl({
-        url: `api/channels/${channel?.id}`,
+        url: `/api/channels/${channel?.id}`,
         query: {
           serverId: server?.id,
         },

@@ -47,9 +47,9 @@ const formSchema = z.object({
   type: z.nativeEnum(ChannelType),
 });
 
-function CreateServerModel() {
+function EditChannelModel() {
   const { isOpen, onClose, onOpen, type, data } = useModal();
-  const { channelType } = data;
+  const { channelType, channel, server } = data;
   const router = useRouter();
   const params = useParams();
   const isModelOpen = isOpen && type === "createChannel";
@@ -58,17 +58,16 @@ function CreateServerModel() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      type: channelType || ChannelType.TEXT,
+      type: channel?.type || ChannelType.TEXT,
     },
   });
 
   useEffect(() => {
-    if (channelType) {
-      form.setValue("type", channelType);
-    } else {
-      form.setValue("type", ChannelType.TEXT);
+    if (channel) {
+      form.setValue("type", channel.type);
+      form.setValue("name", channel.name);
     }
-  }, [channelType]);
+  }, [form, channel]);
 
   const isLoading = form.formState.isSubmitting;
 
@@ -76,12 +75,12 @@ function CreateServerModel() {
     console.log(values);
     try {
       const url = queryString.stringifyUrl({
-        url: "/api/channels",
+        url: `/api/channels/${channel?.id}`,
         query: {
-          serverId: params?.serverId,
+          serverId: server?.id,
         },
       });
-      await axios.post(url, values);
+      await axios.patch(url, values);
       form.reset();
       router.refresh();
       onClose();
@@ -100,7 +99,7 @@ function CreateServerModel() {
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center">
-            Create channel
+            Edit channel
           </DialogTitle>
         </DialogHeader>
         <Form {...form}>
@@ -166,7 +165,7 @@ function CreateServerModel() {
             </div>
             <DialogFooter className="bg-gray-100 px-6 py-4">
               <Button disabled={isLoading} variant="primary">
-                Create
+                Save
               </Button>
             </DialogFooter>
           </form>
@@ -176,4 +175,4 @@ function CreateServerModel() {
   );
 }
 
-export default CreateServerModel;
+export default EditChannelModel;
