@@ -6,6 +6,7 @@ import InviteModel from "../models/invite-model";
 import EditServerModel from "../models/edit-server-model";
 import MembersModel from "../models/manage-members";
 import LeaveServerModal from "../models/leave-server";
+import DeleteServerModal from "../models/delete-server-mode";
 export const ModelProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -21,6 +22,7 @@ export const ModelProvider = () => {
       <EditServerModel />
       <MembersModel />
       <LeaveServerModal />
+      <DeleteServerModal />
     </>
   );
 };
