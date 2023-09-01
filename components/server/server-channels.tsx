@@ -2,7 +2,7 @@
 
 import { ServerWithMembersWithProfile } from "@/types";
 import { Channel, ChannelType, MemberRole, Server } from "@prisma/client";
-import ActionTooltip from "../ui/action-tooltip";
+import ActionTooltip from "@/components/ui/action-tooltip";
 import { useModal, ModalType } from "@/hooks/use-model-store";
 import { Hash, Mic, Video, Edit, Trash, Lock } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";

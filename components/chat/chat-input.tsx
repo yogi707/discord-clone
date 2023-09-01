@@ -2,13 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem } from "../ui/form";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Plus, Smile } from "lucide-react";
-import { Input } from "../ui/input";
+import { Input } from "@/components/ui/input";
 import axios from "axios";
 import qs from "query-string";
 import { useModal } from "@/hooks/use-model-store";
-import EmojiPicker from "../ui/emoji-picker";
+import EmojiPicker from "@/components/ui/emoji-picker";
 import { useRouter } from "next/navigation";
 
 interface ChatInputProps {

@@ -1,8 +1,7 @@
 import { currentProfile } from "@/lib/currentProfile";
 import { NextResponse } from "next/server";
-import { v4 as uuidv4 } from "uuid";
 import { db } from "@/lib/db";
-import { MemberRole, Message } from "@prisma/client";
+import { Message } from "@prisma/client";
 
 const MESSAGES_BATCH = 10;
 

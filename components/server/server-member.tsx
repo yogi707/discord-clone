@@ -4,7 +4,7 @@ import { Member, MemberRole, Profile, Server } from "@prisma/client";
 import { ShieldAlert, ShieldCheck } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import UserAvatar from "../ui/user-avatar";
+import UserAvatar from "@/components/ui/user-avatar";
 interface serverMemberProps {
   member: Member & { profile: Profile };
   profile: Profile;

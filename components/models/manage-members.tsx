@@ -9,27 +9,21 @@ import {
 } from "@/components/ui/dialog";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-model-store";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
 import {
   Check,
-  Copy,
   Gavel,
   Loader2,
   MoreVertical,
-  RefreshCw,
   Shield,
   ShieldAlert,
   ShieldCheck,
   ShieldQuestion,
 } from "lucide-react";
-import { Button } from "../ui/button";
-import { useOrigin } from "@/hooks/use-origin";
 import { useState } from "react";
 import axios from "axios";
 import { ServerWithMembersWithProfile } from "@/types";
-import { ScrollArea } from "../ui/scroll-area";
-import UserAvatar from "../ui/user-avatar";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import UserAvatar from "@/components/ui/user-avatar";
 import { MemberRole } from "@prisma/client";
 import {
   DropdownMenu,

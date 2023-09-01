@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import CreateServerModel from "../models/create-server-model";
-import InviteModel from "../models/invite-model";
-import EditServerModel from "../models/edit-server-model";
-import MembersModel from "../models/manage-members";
-import LeaveServerModal from "../models/leave-server";
-import DeleteServerModal from "../models/delete-server-mode";
-import DeleteChannelModal from "../models/delete-channel-model";
-import EditChannelModel from "../models/edit-channel-model";
-import MessageFileModel from "../models/message-file";
-import DeleteMessageModal from "../models/delete-message.model";
+import CreateServerModel from "@/components/models/create-server-model";
+import InviteModel from "@/components/models/invite-model";
+import EditServerModel from "@/components/models/edit-server-model";
+import MembersModel from "@/components/models/manage-members";
+import LeaveServerModal from "@/components/models/leave-server";
+import DeleteServerModal from "@/components/models/delete-server-mode";
+import DeleteChannelModal from "@/components/models/delete-channel-model";
+import EditChannelModel from "@/components/models/edit-channel-model";
+import MessageFileModel from "@/components/models/message-file";
+import DeleteMessageModal from "@/components/models/delete-message.model";
 export const ModelProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
 

@@ -6,7 +6,7 @@ import {
   DropdownMenu,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import {
   ChevronDown,
   LogOut,

@@ -10,7 +10,7 @@ import {
 
 import { useModal } from "@/hooks/use-model-store";
 
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 import { useState } from "react";
 import axios from "axios";

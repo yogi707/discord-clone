@@ -4,8 +4,8 @@ import { db } from "@/lib/db";
 import NavigationAction from "@/components/navigation/NavigationAction";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import NavigationItem from "./NavigationItem";
-import { ModeToggle } from "../mode-toggle";
+import NavigationItem from "@/components/navigation/NavigationItem";
+import { ModeToggle } from "@/components/mode-toggle";
 import { UserButton } from "@clerk/nextjs";
 
 async function NavigationSidebar() {

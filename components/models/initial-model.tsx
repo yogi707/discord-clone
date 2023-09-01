@@ -18,10 +18,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import FileUpload from "../ui/file-upload";
+import FileUpload from "@/components/ui/file-upload";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 

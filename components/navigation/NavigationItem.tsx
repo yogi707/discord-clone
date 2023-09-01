@@ -2,7 +2,7 @@
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import ActionTooltip from "../ui/action-tooltip";
+import ActionTooltip from "@/components/ui/action-tooltip";
 import Image from "next/image";
 interface navigationItems {
   id: string;

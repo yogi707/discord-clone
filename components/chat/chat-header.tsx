@@ -1,9 +1,9 @@
 import { Hash, Menu } from "lucide-react";
 import React from "react";
-import MobileToggle from "../ui/mobile-toogle";
-import UserAvatar from "../ui/user-avatar";
-import SocketIndicator from "../ui/socket-indicator";
-import ChatVideo from "./chat-video";
+import MobileToggle from "@/components/ui/mobile-toogle";
+import UserAvatar from "@/components/ui/user-avatar";
+import SocketIndicator from "@/components/ui/socket-indicator";
+import ChatVideo from "@/components/chat/chat-video";
 
 interface chatHeaderProps {
   serverId: string;

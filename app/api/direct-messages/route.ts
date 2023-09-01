@@ -1,14 +1,12 @@
 import { currentProfile } from "@/lib/currentProfile";
 import { NextResponse } from "next/server";
-import { v4 as uuidv4 } from "uuid";
 import { db } from "@/lib/db";
-import { DirectMessage, MemberRole, Message } from "@prisma/client";
+import { DirectMessage } from "@prisma/client";
 
 const MESSAGES_BATCH = 10;
 
 export async function GET(req: Request) {
   try {
-    const { name, imageUrl } = await req.json();
     const profile = await currentProfile();
     const { searchParams } = new URL(req.url);
 
@@ -28,7 +26,7 @@ export async function GET(req: Request) {
           id: cursor,
         },
         where: {
-          conversationId 
+          conversationId,
         },
         include: {
           member: {
@@ -45,7 +43,7 @@ export async function GET(req: Request) {
       message = await db.directMessage.findMany({
         take: MESSAGES_BATCH,
         where: {
-          conversationId
+          conversationId,
         },
         include: {
           member: {

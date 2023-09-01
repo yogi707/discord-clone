@@ -1,6 +1,6 @@
 import React from "react";
 import queryString from "query-string";
-import ActionTooltip from "../ui/action-tooltip";
+import ActionTooltip from "@/components/ui/action-tooltip";
 import { Video, VideoOff } from "lucide-react";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 

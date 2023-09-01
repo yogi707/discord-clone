@@ -7,7 +7,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "../ui/command";
+} from "@/components/ui/command";
 import { useParams, useRouter } from "next/navigation";
 
 interface serverSearchProps {

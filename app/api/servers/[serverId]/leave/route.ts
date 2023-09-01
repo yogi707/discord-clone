@@ -1,7 +1,6 @@
 import { currentProfile } from "@/lib/currentProfile";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
-import { v4 as uuidV4 } from "uuid";
 
 export async function PATCH(
   req: Request,

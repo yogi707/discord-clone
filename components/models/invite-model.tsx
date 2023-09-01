@@ -9,10 +9,10 @@ import {
 } from "@/components/ui/dialog";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-model-store";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { Check, Copy, RefreshCw } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { useOrigin } from "@/hooks/use-origin";
 import { useState } from "react";
 import axios from "axios";
