@@ -6,6 +6,8 @@ const font = Open_Sans({ subsets: ["latin"] });
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ModelProvider } from "@/components/providers/model-provider";
 import { cn } from "@/lib/utils";
+import { SocketProvider } from "@/components/providers/socket-provider";
+import { QueryProvider } from "@/components/providers/query-provider";
 
 export const metadata: Metadata = {
   title: "Discord",
@@ -27,8 +29,10 @@ export default function RootLayout({
             enableSystem={false}
             storageKey="discord-theme"
           >
-            <ModelProvider />
-            {children}
+            <SocketProvider>
+              <ModelProvider />
+              <QueryProvider>{children}</QueryProvider>
+            </SocketProvider>
           </ThemeProvider>
         </body>
       </html>
