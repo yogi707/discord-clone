@@ -1,4 +1,3 @@
-"use client";
 import NavigationSidebar from "@/components/navigation/NavigationSidebar";
 import React from "react";
 

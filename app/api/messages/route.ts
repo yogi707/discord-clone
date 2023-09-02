@@ -7,7 +7,6 @@ const MESSAGES_BATCH = 10;
 
 export async function GET(req: Request) {
   try {
-    const { name, imageUrl } = await req.json();
     const profile = await currentProfile();
     const { searchParams } = new URL(req.url);
 

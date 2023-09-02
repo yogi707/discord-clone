@@ -6,6 +6,8 @@ const nextConfig = {
       bufferutil: "commonjs bufferutil",
     });
 
+    config.resolve.fallback = { fs: false };
+
     return config;
   },
   images: {
