@@ -58,23 +58,24 @@ function ServerSearch({ data }: serverSearchProps) {
       router.push(`/servers/${params?.serverId}/conversations/${id}`);
 
     if (type === "channel")
-      router.push(`/servers/${params.serverId}/channels/${id}`);
+      router.push(`/servers/${params?.serverId}/channels/${id}`);
   };
 
   return (
     <>
       <button
         onClick={() => setOpen(true)}
-        className="group px-3 py-2 rounded-md flex items-center gap-x-2 w-full hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50"
+        className="group px-2 py-2 rounded-md flex items-center gap-x-2 w-full hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50 transition"
       >
         <Search className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
         <p className="font-semibold text-sm text-zinc-500 dark:text-zinc-600 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition">
-          search{" "}
+          search
         </p>
+        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground ml-auto">
+          <span className="text-xs">⌘</span>K
+        </kbd>
       </button>
-      <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border b-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground ml-auto">
-        <span className="text-xs">CMD</span>
-      </kbd>{" "}
+
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="search all channels and members" />
         <CommandList>

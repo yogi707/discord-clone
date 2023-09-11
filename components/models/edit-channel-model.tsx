@@ -52,7 +52,7 @@ function EditChannelModel() {
   const { channelType, channel, server } = data;
   const router = useRouter();
   const params = useParams();
-  const isModelOpen = isOpen && type === "createChannel";
+  const isModelOpen = isOpen && type === "editChannel";
 
   const form = useForm({
     resolver: zodResolver(formSchema),

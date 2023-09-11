@@ -56,8 +56,6 @@ function MembersModel() {
 
   const onRoleChange = async (memberId: string, role: MemberRole) => {
     try {
-    } catch (err) {
-      console.log({ err });
       setLoadingId(memberId);
       const url = qs.stringifyUrl({
         url: `/api/members/${memberId}`,
@@ -65,13 +63,13 @@ function MembersModel() {
           serverId: server.id,
         },
       });
-
       const response = await axios.patch(url, {
         role,
       });
-
       router.refresh();
       onOpen("members", { server: response.data });
+    } catch (err) {
+      console.log({ err });
     } finally {
       setLoadingId("");
     }
@@ -127,7 +125,7 @@ function MembersModel() {
                       <DropdownMenuTrigger>
                         <MoreVertical className="h-4 w-4 text-zinc-500" />
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent side="left">
+                      <DropdownMenuContent side="left" className="h-20">
                         <DropdownMenuSub>
                           <DropdownMenuSubTrigger className="flex items-start">
                             <ShieldQuestion className="w-4 h-4 mr-2" />

@@ -26,7 +26,7 @@ async function MemberChatsPage({ params, searchParams }: MemberChatsPageProps) {
 
   const currentMember = await db.member.findFirst({
     where: {
-      serverId: params.memberId,
+      serverId: params.serverId,
       profileId: profile.id,
     },
     include: {
@@ -34,6 +34,7 @@ async function MemberChatsPage({ params, searchParams }: MemberChatsPageProps) {
     },
   });
 
+  console.log({ currentMember });
   if (!currentMember) return redirect("/");
 
   const conversation = await getOrcreateConversation(
@@ -49,7 +50,7 @@ async function MemberChatsPage({ params, searchParams }: MemberChatsPageProps) {
     memberOne.profileId === profile.id ? memberTwo : memberOne;
 
   return (
-    <div className="bg-white dark:bg-[#31333] flex flex-col h-full">
+    <div className="bg-white dark:bg-[#313338] flex flex-col h-full">
       <ChatHeader
         imageUrl={otherMember.profile.imageUrl}
         name={otherMember.profile.name}
@@ -57,9 +58,7 @@ async function MemberChatsPage({ params, searchParams }: MemberChatsPageProps) {
         type="coversation"
       />
 
-      {!searchParams.video && (
-        <MediaRoom chatId={conversation.id} video audio />
-      )}
+      {searchParams.video && <MediaRoom chatId={conversation.id} video audio />}
       {!searchParams.video && (
         <>
           <ChatMessages
@@ -82,7 +81,7 @@ async function MemberChatsPage({ params, searchParams }: MemberChatsPageProps) {
             query={{
               conversationId: conversation.id,
             }}
-          />{" "}
+          />
         </>
       )}
     </div>

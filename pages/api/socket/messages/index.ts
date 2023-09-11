@@ -7,7 +7,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponseServerIo
 ) {
-  if (req.method! == "POST") {
+  if (req.method !== "POST") {
+    console.log("I am here ");
     return res.status(405).json({ error: "method not allowed" });
   }
 

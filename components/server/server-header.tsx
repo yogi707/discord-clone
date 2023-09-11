@@ -6,6 +6,8 @@ import {
   DropdownMenu,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import {
   ChevronDown,
@@ -16,10 +18,6 @@ import {
   UserPlus,
   Users,
 } from "lucide-react";
-import {
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@radix-ui/react-dropdown-menu";
 import { useModal } from "@/hooks/use-model-store";
 
 interface serverHeaderProps {

@@ -11,6 +11,7 @@ import DeleteChannelModal from "@/components/models/delete-channel-model";
 import EditChannelModel from "@/components/models/edit-channel-model";
 import MessageFileModel from "@/components/models/message-file";
 import DeleteMessageModal from "@/components/models/delete-message.model";
+import CreateChannelModal from "@/components/models/create-channel-model";
 export const ModelProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -24,6 +25,7 @@ export const ModelProvider = () => {
       <CreateServerModel />
       <InviteModel />
       <EditServerModel />
+      <CreateChannelModal />
       <MembersModel />
       <LeaveServerModal />
       <DeleteServerModal />

@@ -108,7 +108,7 @@ function ChatMessages({
         {data?.pages?.map((group, i) => {
           return (
             <Fragment key={i}>
-              {group.items.map((message: MessageWithProfileWithType) => {
+              {group?.items?.map((message: MessageWithProfileWithType) => {
                 return (
                   <ChatItem
                     currentMember={member}
@@ -118,7 +118,7 @@ function ChatMessages({
                     fileUrl={message.fileUrl}
                     deleted={message.deleted}
                     timestamp={format(new Date(message.createdAt), DATE_FORMAT)}
-                    isUpdated={message.updatedAt! == message.createdAt}
+                    isUpdated={message.updatedAt !== message.createdAt}
                     socketUrl={socketUrl}
                     socketQuery={socketQuery}
                     id={message.id}

@@ -22,7 +22,7 @@ function LeaveServerModal() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  const isModelOpen = isOpen && type === "invite";
+  const isModelOpen = isOpen && type === "leaveServer";
 
   const onClick = async () => {
     try {

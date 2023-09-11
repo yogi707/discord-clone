@@ -6,12 +6,15 @@ import InitalModel from "@/components/models/initial-model";
 
 async function SetupPage() {
   const profile = await initialProfile();
+  console.log({ profile });
+
+  if (!profile) return <div>Profile not found</div>;
 
   const server = await db.server.findFirst({
     where: {
       members: {
         some: {
-          profileId: profile.id,
+          profileId: profile?.id,
         },
       },
     },

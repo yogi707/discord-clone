@@ -1,3 +1,4 @@
+"use client";
 import { Member, MemberRole, Profile } from "@prisma/client";
 import React, { useEffect, useState } from "react";
 import UserAvatar from "@/components/ui/user-avatar";
@@ -125,7 +126,7 @@ function ChatItem(props: chatItemProps) {
   };
 
   return (
-    <div className="relative group flex items-center hover:bg-black/5p-4 transition w-full">
+    <div className="relative group flex items-center hover:bg-black/5 p-4 transition w-full">
       <div className="group flex gap-x-2 items-start w-full">
         <div
           onClick={onMemberClick}
@@ -183,7 +184,7 @@ function ChatItem(props: chatItemProps) {
           {!fileUrl && !isEditing && (
             <p
               className={cn(
-                "text-sm text-zinc-300 dark:text-zinc-300",
+                "text-sm text-zinc-600 dark:text-zinc-300",
                 deleted &&
                   "italic text-zinc-500 dark:text-zinc-400 text-xs mt-1"
               )}
@@ -196,7 +197,7 @@ function ChatItem(props: chatItemProps) {
               )}
             </p>
           )}
-          {!fileUrl && isEditMessage && (
+          {!fileUrl && isEditing && (
             <Form {...form}>
               <form
                 className="flex items-center w-full gap-x-2 pt-2"
@@ -236,7 +237,7 @@ function ChatItem(props: chatItemProps) {
         </div>
       </div>
       {canDeleteMessage && (
-        <div className="hidden group-hover:flex items-center gap-x-2 absolute p-1 top-2 right-5 bg-white dark:bg-zinc-800 border rounded-sm">
+        <div className="hidden group-hover:flex items-center gap-x-2 absolute p-1 -top-2 right-5 bg-white dark:bg-zinc-800 border rounded-sm">
           {isEditMessage && (
             <ActionTooltip label="Edit">
               <Edit
@@ -245,7 +246,7 @@ function ChatItem(props: chatItemProps) {
               />
             </ActionTooltip>
           )}
-          <ActionTooltip label="Edit">
+          <ActionTooltip label="Delete">
             <Trash
               onClick={() =>
                 onOpen("deleteMessage", {

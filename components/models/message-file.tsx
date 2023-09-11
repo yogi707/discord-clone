@@ -12,7 +12,6 @@ import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import FileUpload from "@/components/ui/file-upload";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -26,10 +25,9 @@ const formSchema = z.object({
 });
 
 function MessageFileModel() {
-  const [isMounted, setMounted] = useState(false);
-
   const router = useRouter();
   const { isOpen, onOpen, onClose, type, data } = useModal();
+
   const { query, apiUrl } = data;
   const isModalOpen = isOpen && type === "messageFile";
 
@@ -64,8 +62,6 @@ function MessageFileModel() {
     form.reset();
     onClose();
   };
-
-  if (!isMounted) return null;
 
   return (
     <Dialog open={isModalOpen} onOpenChange={handleClose}>

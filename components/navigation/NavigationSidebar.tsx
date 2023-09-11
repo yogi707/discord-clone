@@ -29,7 +29,7 @@ async function NavigationSidebar() {
       <ScrollArea className="flex-1 w-full">
         {servers.map((server) => {
           return (
-            <div key={server.id}>
+            <div key={server.id} className="mb-4">
               <NavigationItem
                 name={server.name}
                 id={server.id}

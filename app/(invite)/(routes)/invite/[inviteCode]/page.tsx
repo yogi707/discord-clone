@@ -39,7 +39,7 @@ async function InviteCodePage(props: inviteProps) {
       },
     },
   });
-  if (server) return redirect(`servers/${server.id}`);
+  if (server) return redirect(`/servers/${server.id}`);
   return null;
 }
 

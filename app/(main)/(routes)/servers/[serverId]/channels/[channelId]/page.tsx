@@ -50,7 +50,7 @@ async function ChannelPage(props: ChannelPageProps) {
             <ChatMessages
               member={member}
               name={channel.name}
-              type="conversation"
+              type="channel"
               apiUrl="/api/messages"
               socketUrl="/api/socket/messages"
               socketQuery={{
@@ -67,8 +67,8 @@ async function ChannelPage(props: ChannelPageProps) {
             type="channel"
             apiUrl="/api/socket/messages"
             query={{
-              serverId: channel.id,
-              channelId: channel.serverId,
+              serverId: channel.serverId,
+              channelId: channel.id,
             }}
           />
         </>
