@@ -215,6 +215,7 @@ async function ServerSideBar(props: serverSideBarProps) {
               {members.map((member) => {
                 return (
                   <ServerMember
+                    key={member.id}
                     profile={profile}
                     member={member}
                     server={server}
