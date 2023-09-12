@@ -30,6 +30,7 @@ import { QueryProvider } from "@/components/providers/query-provider";
 // // Initialize Firebase
 // const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
+// testing
 
 export const metadata: Metadata = {
   title: "Discord",
