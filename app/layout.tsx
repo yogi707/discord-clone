@@ -34,7 +34,7 @@ import { QueryProvider } from "@/components/providers/query-provider";
 
 export const metadata: Metadata = {
   title: "Discord",
-  description: "Team chat application",
+  description: "Chat application",
 };
 
 export default function RootLayout({
